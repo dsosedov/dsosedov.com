@@ -1,0 +1,7 @@
+---
+applications:
+  - name: dsosedov
+    memory: 4M
+    disk_quota: 128M
+    buildpacks:
+      - staticfile_buildpack
