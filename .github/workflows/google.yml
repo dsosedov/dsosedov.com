@@ -20,10 +20,11 @@ jobs:
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         version: '270.0.0'
-        service_account_email: ${{ secrets.GCP_EMAIL }}
-        service_account_key: ${{ secrets.GCP_KEY }}
+        #service_account_email: ${{ secrets.GCP_EMAIL }}
+        #service_account_key: ${{ secrets.GCP_KEY }}
 
-    - run: |
+    - name: Login to GCP
+      run: |
         gcloud auth login
 
     - name: Deploy
