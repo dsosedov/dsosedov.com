@@ -1,4 +1,4 @@
-name: Build and Deploy to GKE
+name: Build and Deploy to GCP
 
 on:
   release:
@@ -18,3 +18,7 @@ jobs:
         version: '270.0.0'
         service_account_email: ${{ secrets.GCP_EMAIL }}
         service_account_key: ${{ secrets.GCP_KEY }}
+
+    - name: Deploy
+      run: |
+        gcloud app deploy app.yaml
